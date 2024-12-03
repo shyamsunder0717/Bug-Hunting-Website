@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+/* General Styles */
+:root {
+    --primary: #00dc82;
+    --secondary: #ff3e88;
+    --dark-bg: #0d1117;
+    --darker-bg: #090c10;
+    --text-color: #c9d1d9;
+    --code-color: #7ee787;
+    --border-color: rgba(0, 220, 130, 0.2);
+    --hover-glow: rgba(0, 220, 130, 0.15);
+    --code-bg: rgba(0, 220, 130, 0.05);
+    --font-primary: 'JetBrains Mono', 'Fira Code', monospace;
+    --font-code: 'Fira Code', 'JetBrains Mono', monospace;
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --transition-speed: 0.3s;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #c9d1d9;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #0d1117;
+    border-bottom: 1px solid #30363d;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: #39d353;
+    margin: 0;
+}
+
+.button {
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #21262d;
+    margin-left: 10px;
+}
+
+.button:hover {
+    background-color: #30363d;
+}
+
+.tutorials {
+    background-color: #6e40c9;
+}
+
+.tools {
+    background-color: #2ea043;
+}
+
+/* Cards Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin: 2rem;
+    padding: 1rem;
+}
+
+.card {
+    background-color: #21262d;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    color: #c9d1d9;
+}
+
+.tags span {
+    display: inline-block;
+    margin: 0.2rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    background-color: #30363d;
+    color: #8b949e;
+}
+
+.link {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #39d353;
+    font-weight: bold;
+}
+
+.link:hover {
+    color: #58a6ff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #0d1117;
+    color: #8b949e;
+}
+
+/* Animation Styles */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card Hover Effect */
+.card {
+    background-color: #21262d;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Tag Animation */
+.tags span {
+    display: inline-block;
+    margin: 0.2rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    background-color: #30363d;
+    color: #8b949e;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Header Animation */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(13, 17, 23, 0.8);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    background-color: rgba(13, 17, 23, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+.intro-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--dark-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 0.5s ease 2.5s forwards;
+}
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.intro-logo {
+    width: 75px;
+    height: 75px;
+    animation: logoAnimation 2.5s ease forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.intro-text {
+    text-align: center;
+}
+
+.intro-text h1 {
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin: 0;
+    opacity: 0;
+    animation: textFadeIn 0.5s ease 1s forwards;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.intro-credits {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: textFadeIn 0.5s ease 1.5s forwards;
+    font-size: 1.3rem;
+    /* font-weight: 600; */
+    font-family: 'Orbitron', sans-serif !important;
+}
+.intro-credits span {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.credit-name {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.credit-name:hover {
+    color: var(--secondary);
+    transition: all ease-in-out .2s;
+}
+@keyframes logoAnimation {
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+
+    80% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .intro-text h1 {
+        font-size: 2rem;
+    }
+}
