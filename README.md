@@ -1,6 +1,4 @@
-# Bug-Hunting-Website
-
-# LostSec - Bug Hunting and Security Methodologies
+# RAS Sec - Bug Hunting and Security Methodologies
 
 LostSec is a comprehensive resource for ethical hackers and bug bounty hunters, providing detailed methodologies, payloads, and tools to enhance their skills and streamline their workflows.
 
